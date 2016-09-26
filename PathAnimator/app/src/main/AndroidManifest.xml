@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.arist.pathanimator">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".CustomApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.QuadBezierPathActivity" android:theme="@style/AppTheme" android:label="二次贝塞尔曲线"/>
+        <activity android:name=".activity.CubicBezierPathActivity" android:theme="@style/AppTheme" android:label="三次贝塞尔曲线"/>
+        <activity android:name=".activity.PathAnimationActivity" android:theme="@style/AppTheme" android:label="路径动画"/>
+        <activity android:name=".activity.BezierCircleActivity" android:theme="@style/AppTheme" android:label="路径动画"/>
+        <activity android:name=".activity.BezierDragCircleActivity" android:theme="@style/AppTheme" android:label="拖拽"/>
+        <activity android:name=".activity.CircleLoadingSuccessActivity" android:theme="@style/AppTheme" android:label="进度动画"/>
+        <activity android:name=".activity.PathTestActivity" android:theme="@style/AppTheme" android:label="Path Test"/>
+        <activity android:name=".activity.PathTest2Activity" android:theme="@style/AppTheme" android:label="Path Test2"/>
+        <activity android:name=".activity.ValueAnimatorActivity" android:theme="@style/AppTheme" android:label="ValueAnimator"/>
+        <activity android:name=".activity.ObjectAnimatorActivity" android:theme="@style/AppTheme" android:label="ObjectAnimator"/>
+        <activity android:name=".activity.PropertyValuesHolderActivity" android:theme="@style/AppTheme" android:label="PropertyValuesHolder"/>
+        <activity android:name=".activity.AnimatorSetActivity" android:theme="@style/AppTheme" android:label="组合动画"/>
+        <activity android:name=".activity.PathWaterWaveActivity" android:theme="@style/AppTheme" android:label="水波纹效果"/>
+        <activity android:name=".activity.CustomSwitchActivity" android:theme="@style/AppTheme" android:label="自定义开关"/>
+        <activity android:name=".activity.CircleLoadingActivity" android:theme="@style/AppTheme" android:label="Circle Loading View"/>
+        <activity android:name=".activity.GradientTestActivity" android:theme="@style/AppTheme" android:label="Gradient Test"/>
+        <activity android:name=".activity.BallLoadingActivity" android:theme="@style/AppTheme" android:label="Ball Loading"/>
+        <activity android:name=".activity.RingLoadingActivity" android:theme="@style/AppTheme" android:label="Ring Loading"/>
+
+    </application>
+
+</manifest>
