@@ -6,13 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.arist.pathanimator.R;
-import com.arist.pathanimator.SimpleListAdapter;
-import com.arist.pathanimator.view.BallLoadingView;
-import com.arist.pathanimator.view.CustomSwitch;
+import com.arist.pathanimator.adapter.SimpleListAdapter;
 
 import java.util.ArrayList;
 
@@ -91,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         datas.add("Ring Loading");
         datasClass.add(RingLoadingActivity.class);
+
+        datas.add("Count Down");
+        datasClass.add(CountDownActivity.class);
 
 //        adapter = new SimpleListAdapter(MainActivity.this, datas);
 //        listView.setAdapter(adapter);

@@ -37,6 +37,7 @@
         <activity android:name=".activity.GradientTestActivity" android:theme="@style/AppTheme" android:label="Gradient Test"/>
         <activity android:name=".activity.BallLoadingActivity" android:theme="@style/AppTheme" android:label="Ball Loading"/>
         <activity android:name=".activity.RingLoadingActivity" android:theme="@style/AppTheme" android:label="Ring Loading"/>
+        <activity android:name=".activity.CountDownActivity" android:theme="@style/AppTheme" android:label="Count Down"/>
 
     </application>
 
