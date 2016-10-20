@@ -36,8 +36,12 @@
         <activity android:name=".activity.CircleLoadingActivity" android:theme="@style/AppTheme" android:label="Circle Loading View"/>
         <activity android:name=".activity.GradientTestActivity" android:theme="@style/AppTheme" android:label="Gradient Test"/>
         <activity android:name=".activity.BallLoadingActivity" android:theme="@style/AppTheme" android:label="Ball Loading"/>
+        <activity android:name=".activity.BallRadiusLoadingActivity" android:theme="@style/AppTheme" android:label="Ball Radius Loading"/>
         <activity android:name=".activity.RingLoadingActivity" android:theme="@style/AppTheme" android:label="Ring Loading"/>
         <activity android:name=".activity.CountDownActivity" android:theme="@style/AppTheme" android:label="Count Down"/>
+        <activity android:name=".activity.MusicPlayActivity" android:theme="@style/AppTheme" android:label="Music Play"/>
+        <activity android:name=".activity.AiQiYiLoadingActivity" android:theme="@style/AppTheme" android:label="AiQiYi Loading"/>
+        <activity android:name=".activity.AnimatedPageControlActivity" android:theme="@style/AppTheme" android:label="Animated Page Control"/>
 
     </application>
 

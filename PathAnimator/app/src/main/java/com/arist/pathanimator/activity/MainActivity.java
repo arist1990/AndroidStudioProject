@@ -85,14 +85,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         datas.add("Ball Loading");
         datasClass.add(BallLoadingActivity.class);
 
+        datas.add("Ball Radius Loading");
+        datasClass.add(BallRadiusLoadingActivity.class);
+
         datas.add("Ring Loading");
         datasClass.add(RingLoadingActivity.class);
 
         datas.add("Count Down");
         datasClass.add(CountDownActivity.class);
 
-//        adapter = new SimpleListAdapter(MainActivity.this, datas);
-//        listView.setAdapter(adapter);
+        datas.add("Music Play");
+        datasClass.add(MusicPlayActivity.class);
+
+        datas.add("Ai Qi Yi Loading");
+        datasClass.add(AiQiYiLoadingActivity.class);
+
+        datas.add("Animated Page Control");
+        datasClass.add(AnimatedPageControlActivity.class);
 
         adapterGrid = new SimpleListAdapter(MainActivity.this, datas);
         gridView.setAdapter(adapterGrid);

@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.arist.pathanimator.R;
 import com.arist.pathanimator.view.BallLoadingView;
+import com.arist.pathanimator.view.BallQQMailLoadingView;
 import com.arist.pathanimator.view.CircleLoadingView;
 
 public class BallLoadingActivity extends AppCompatActivity {
@@ -32,17 +33,21 @@ public class BallLoadingActivity extends AppCompatActivity {
     }
 
     private BallLoadingView ballLoadingView;
+    private BallQQMailLoadingView ballQQMailLoadingView;
     private void init(){
 
         ballLoadingView = (BallLoadingView) findViewById(R.id.ballLoadingView);
+        ballQQMailLoadingView = (BallQQMailLoadingView) findViewById(R.id.ballQQMailLoadingView);
     }
 
     public void onStart(View view){
         ballLoadingView.startLoading();
+        ballQQMailLoadingView.startLoading();
     }
 
     public void onStop(View view){
         ballLoadingView.stopLoading();
+        ballQQMailLoadingView.stopLoading();
     }
 
 }

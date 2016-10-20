@@ -9,47 +9,29 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.SweepGradient;
-import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnticipateInterpolator;
-import android.view.animation.AnticipateOvershootInterpolator;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.CycleInterpolator;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.OvershootInterpolator;
-
-import com.arist.pathanimator.R;
-import com.arist.pathanimator.animator.CustomValueAnimator;
-
-import java.util.ArrayList;
 
 /**
  * Created by arist on 16/9/11.
  */
-public class RingLoadingView extends View {
+public class RingLoadingView2 extends View {
 
-    public RingLoadingView(Context context) {
+    public RingLoadingView2(Context context) {
         super(context);
     }
 
-    public RingLoadingView(Context context, AttributeSet attrs) {
+    public RingLoadingView2(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public RingLoadingView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RingLoadingView2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     private ValueAnimator valueAnimator;
-    private ValueAnimator colorAnimator;
-    private int color = Color.RED;
-    private boolean isAdd = true;
     public void startLoading(){
 
         stopLoading();
@@ -67,38 +49,12 @@ public class RingLoadingView extends View {
                     startAngle -= 360.f;
                 }
 
-                float newAngle = swipAngle + swipAngleSingle * (isAdd ? 1 : -1);
-                if (newAngle < 0) {
-                    isAdd = true;
-                    newAngle += swipAngleSingle*2;
-                } else if (newAngle > 360.0f){
-                    isAdd = false;
-                    newAngle -= swipAngleSingle*2;
-                }
-
-                swipAngle = newAngle;
-
                 invalidate();
             }
         });
         valueAnimator.setDuration(5000);
         valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
         valueAnimator.start();
-
-        colorAnimator = ValueAnimator.ofObject(new ArgbEvaluator(), Color.rgb(255, 0, 0), Color.rgb(200, 0, 0));
-        colorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-
-                color = (int) animation.getAnimatedValue();
-
-                invalidate();
-            }
-        });
-        colorAnimator.setDuration(5000);
-        colorAnimator.setRepeatMode(ValueAnimator.REVERSE);
-        colorAnimator.setRepeatCount(ValueAnimator.INFINITE);
-        colorAnimator.start();
 
     }
 
@@ -107,21 +63,16 @@ public class RingLoadingView extends View {
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        if (colorAnimator != null) {
-            colorAnimator.cancel();
-        }
 
     }
 
     private float startAngle;   // 起始角度
     private float startAngleSingle = 3.0f;   // 起始角度增值
-    private float swipAngle = 0.f;        // 扫过的角度
-    private float swipAngleSingle = 1.0f;   // 扫过角度每次增值
+    private float swipAngle = 60.f;        // 扫过的角度
     private float radius;   // 半径
     private float lineWidth;   // 线宽
 
     private Paint paint;
-    private Paint paintShader;
 
     private Path pathBack;
     private Path pathRing;
@@ -140,13 +91,7 @@ public class RingLoadingView extends View {
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(lineWidth);
-
-        paintShader = new Paint(paint);
-        paintShader.setStrokeCap(Paint.Cap.ROUND);
-
-        paintShader.setShader(new SweepGradient(0, 0,
-                new int[]{Color.RED, Color.YELLOW, Color.RED},
-                new float[]{0.0f, 0.5f, 1.0f}));
+        paint.setStrokeCap(Paint.Cap.ROUND);
 
         pathBack = new Path();
         pathBack.addCircle(0, 0, radius, Path.Direction.CW);
@@ -163,6 +108,7 @@ public class RingLoadingView extends View {
         }
 
         canvas.translate(getWidth() / 2, getHeight() / 2);
+        canvas.rotate(-90.0f);
 
         pathRing.reset();;
         pathRing.addArc(new RectF(-radius, -radius, radius, radius), startAngle, swipAngle);
@@ -170,8 +116,8 @@ public class RingLoadingView extends View {
         paint.setColor(Color.LTGRAY);
         canvas.drawPath(pathBack, paint);
 
-        paintShader.setColor(color);
-        canvas.drawPath(pathRing, paintShader);
+        paint.setColor(Color.DKGRAY);
+        canvas.drawPath(pathRing, paint);
 
     }
 

@@ -45,6 +45,8 @@ public class CircleProgressView extends View {
     private Paint paint;
     private void init(){
 
+        setLayerType(LAYER_TYPE_SOFTWARE, null);
+
         int width = getWidth();
         int height = getHeight();
 

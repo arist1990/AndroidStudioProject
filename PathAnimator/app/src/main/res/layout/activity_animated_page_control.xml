@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/default_background"
+            android:scaleType="centerCrop"/>
+
+        <com.arist.pathanimator.view.PageControlAnimated
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:text="上一个"
+            android:onClick="onPre"
+            />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:text="下一个"
+            android:onClick="onNext"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:textSize="14sp"
+            android:layout_marginLeft="20dp"
+            android:background="#f1f1f1"
+            android:padding="5dp"
+            android:inputType="number"
+            />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:text="跳转"
+            android:onClick="onJump"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/etNum"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:textSize="14sp"
+            android:layout_marginLeft="20dp"
+            android:background="#f1f1f1"
+            android:padding="5dp"
+            android:inputType="number"
+            />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:text="设置总数"
+            android:onClick="onCount"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -5,29 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.arist.pathanimator.view.RingLoadingView2
-        android:id="@+id/ringLoadingView2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="#0000"
+    <com.arist.pathanimator.view.AiQiYiLoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#f1f1f1"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"/>
-
-    <com.arist.pathanimator.view.RingLoadingView
-        android:id="@+id/ringLoadingView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="#0000"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/ringLoadingView2"
-        android:layout_centerHorizontal="true"/>
-
-    <com.arist.pathanimator.view.IOSLoadingView
-        android:id="@+id/iOSLoadingView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/ringLoadingView"
         android:layout_centerHorizontal="true"/>
 
     <LinearLayout

@@ -49,6 +49,8 @@ public class BallLoadingView extends View {
         super(context, attrs, defStyleAttr);
     }
 
+    private int duration = 1600;
+
     private ArrayList<ValueAnimator> animatorArrayList = new ArrayList<>();
     private ArrayList<ValueAnimator> animatorColorArrayList = new ArrayList<>();
     public void startLoading(){
@@ -68,7 +70,7 @@ public class BallLoadingView extends View {
                     invalidate();
                 }
             });
-            valueAnimator.setDuration(1500);
+            valueAnimator.setDuration(duration / 2);
             valueAnimator.setStartDelay(valueAnimator.getDuration() / ballCount * i);
             valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
             valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
@@ -98,12 +100,10 @@ public class BallLoadingView extends View {
                     // 计算颜色
                     ballColorList.set(tag, (Integer) animation.getAnimatedValue());
 
-//                    Log.e("info", "color:" + String.format("%x", (Integer) animation.getAnimatedValue()));
-
                     invalidate();
                 }
             });
-            valueAnimatorColor.setDuration(3000);
+            valueAnimatorColor.setDuration(duration);
             valueAnimatorColor.setStartDelay(valueAnimatorColor.getDuration() / ballCount * i);
             valueAnimatorColor.setRepeatCount(ValueAnimator.INFINITE);
             valueAnimatorColor.setRepeatMode(ValueAnimator.REVERSE);

@@ -5,30 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.arist.pathanimator.view.RingLoadingView2
-        android:id="@+id/ringLoadingView2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="#0000"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"/>
-
-    <com.arist.pathanimator.view.RingLoadingView
-        android:id="@+id/ringLoadingView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="#0000"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/ringLoadingView2"
-        android:layout_centerHorizontal="true"/>
-
-    <com.arist.pathanimator.view.IOSLoadingView
-        android:id="@+id/iOSLoadingView"
+    <com.arist.pathanimator.view.BallRadiusLoadingView
+        android:id="@+id/ballLoadingView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/ringLoadingView"
-        android:layout_centerHorizontal="true"/>
+        android:background="#e1e1e1"
+        android:layout_centerInParent="true"/>
 
     <LinearLayout
         android:layout_centerHorizontal="true"
@@ -56,5 +38,7 @@
             />
 
     </LinearLayout>
+
+
 
 </RelativeLayout>
